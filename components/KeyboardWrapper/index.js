@@ -4,7 +4,7 @@ import { Header } from 'react-navigation';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 import PropTypes from 'prop-types';
 
-const KeyboardWrapper = props => {
+const KeyboardWrapper = (props) => {
   const { children } = props;
 
   return (
@@ -21,7 +21,7 @@ const KeyboardWrapper = props => {
 };
 
 KeyboardWrapper.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default KeyboardWrapper;

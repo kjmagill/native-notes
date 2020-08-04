@@ -1,9 +1,7 @@
 import * as WebBrowser from 'expo-web-browser';
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
-//import Mutation component for performing queries.
 import { Mutation } from 'react-apollo';
-// import gql from graphql-tag to define your graphql schema
 import gql from 'graphql-tag';
 import { NotesContainer, NotesWrapper } from './styled';
 import { Button, TextArea, KeyboardWrapper } from '../components';
@@ -30,18 +28,18 @@ class AddNoteScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      note: ''
+      note: '',
     };
   }
 
-  _addNote = postAction => {
+  _addNote = (postAction) => {
     const { note } = this.state;
     const { navigation } = this.props;
     return (
       <Button
         onPress={() =>
           postAction({
-            variables: { text: note }
+            variables: { text: note },
           }).then(navigation.goBack())
         }
         title={'Add new note'}
@@ -62,9 +60,7 @@ class AddNoteScreen extends Component {
                 value={note}
                 returnKeyType="next"
                 placeholder={'Jot Something'}
-                //onChangeText is basically a simplified version of onChange,
-                //so you can easily use it, without the hassle of going through event.target.value to get changed value.
-                onChangeText={text => this.setState({ note: text })}
+                onChangeText={(text) => this.setState({ note: text })}
               />
             </NotesWrapper>
           </ScrollView>
@@ -74,7 +70,7 @@ class AddNoteScreen extends Component {
               const data = store.readQuery({ query: GET_NOTES });
               store.writeQuery({
                 query: GET_NOTES,
-                data: { notes: data.notes.concat([createNewNote]) }
+                data: { notes: data.notes.concat([createNewNote]) },
               });
             }}
           >

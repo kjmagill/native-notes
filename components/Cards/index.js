@@ -1,17 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Images } from '../../constants';
-
 import {
   CardContainer,
   TimestampContainer,
   EditWrapper,
   EditIcon,
   CardText,
-  HeaderContainer
+  HeaderContainer,
 } from './styled';
+// import PropTypes from 'prop-types';
 
-const NoteCard = props => {
+const NoteCard = (props) => {
   const { onOptions, noteText } = props;
   return (
     <CardContainer>
@@ -25,4 +24,5 @@ const NoteCard = props => {
     </CardContainer>
   );
 };
+
 export default NoteCard;

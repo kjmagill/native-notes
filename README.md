@@ -1,2 +1,3 @@
-# native-notes
-A mobile note-taking app built with Expo/RN, Apollo GraphQL and Styled Components
+# Native Notes
+
+A mobile note-taking app built with Expo, Apollo GraphQL, React Native Components and Styled Components.
